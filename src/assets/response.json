@@ -1,0 +1,70 @@
+{
+    "groups": [
+        {
+            "id": 1,
+            "description": "Form Group 1",
+            "forms": [
+                {
+                    "id": 1,
+                    "description": "Personal Information",
+                    "fields": [
+                        {
+                            "field": "firstName",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "lastName",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "age",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "sex",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "description": "Account",
+                    "fields": [
+                        {
+                            "field": "userName",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "password",
+                            "isRequired": true,
+                            "isOptional": false,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "email",
+                            "isRequired": false,
+                            "isOptional": true,
+                            "isNothing": false
+                        },
+                        {
+                            "field": "phone",
+                            "isRequired": false,
+                            "isOptional": false,
+                            "isNothing": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

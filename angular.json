@@ -25,7 +25,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/app/shared/data"
             ],
             "styles": [
               "./node_modules/primeng/resources/themes/nova-light/theme.css",

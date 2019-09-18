@@ -156,26 +156,74 @@
     </div>
   </div>
   <div class="right">
-    <p-panel header="Required, Optional and Without Check Fields">
+    <p-panel header="Forms">
       <p-table
-        [columns]="cols"
-        [value]="cars1"
-        [scrollable]="true"
-        scrollHeight="200px"
+        [columns]="formsCols"
+        [value]="forms"
+        selectionMode="single"
+        [(selection)]="selectedForm"
+        (onRowSelect)="onFormSelect($event)"
+        [paginator]="true"
+        [rows]="15"
       >
         <ng-template pTemplate="header" let-columns>
           <tr>
-            <th *ngFor="let col of columns">
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
               {{ col.header }}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
             </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
-          <tr>
+          <tr [pSelectableRow]="rowData">
             <td *ngFor="let col of columns">
               {{ rowData[col.field] }}
             </td>
           </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          Insert new
+          <!-- <div style="text-align:left">
+                <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+            </div> -->
+        </ng-template>
+      </p-table>
+    </p-panel>
+
+    <p-panel
+      header="Required, Optional and Without Check Fields"
+      [style]="{ 'margin-top': '.5em' }"
+    >
+      <p-table
+        [columns]="cols"
+        [value]="fields"
+        selectionMode="single"
+        [(selection)]="selectedField"
+        (onRowSelect)="onFieldSelect($event)"
+        [paginator]="true"
+        [rows]="15"
+      >
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th
+              *ngFor="let col of columns"
+              [pSortableColumn]="col.field"
+              [ngStyle]="{ width: col.width }"
+            >
+              {{ col.header }}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+          <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns" [width]="col.width">
+              {{ rowData[col.field] }}
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          Insert new
         </ng-template>
       </p-table>
     </p-panel>

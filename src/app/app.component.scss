@@ -12,12 +12,12 @@
 
   .left {
     @include half();
-    background: wheat;
+    // background: wheat;
   }
 
   .right {
     @include half();
-    background: lightcoral;
+    // background: lightcoral;
   }
 }
 
