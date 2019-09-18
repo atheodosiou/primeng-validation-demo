@@ -1,0 +1,33 @@
+@mixin half {
+  height: inherit;
+  width: 50%;
+  padding: 0.5em;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: aliceblue;
+
+  .left {
+    @include half();
+    background: wheat;
+  }
+
+  .right {
+    @include half();
+    background: lightcoral;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  button {
+    margin-right: 0.5em;
+  }
+}
